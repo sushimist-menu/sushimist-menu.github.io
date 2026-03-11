@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/png" href="/favicon.png"><meta name="generator" content="Astro v5.16.15"><title>Carrito - SUSHI MIST</title><link rel="stylesheet" href="/_astro/cart.DpdK7f2L.css">
+<style>.order-btn[data-astro-cid-iehx2mtc]{display:block;width:100%;padding:1rem;background:#25d366;color:#fff;font-weight:700;font-size:1.1rem;border-radius:var(--radius);text-align:center;transition:filter .2s}.order-btn[data-astro-cid-iehx2mtc]:hover{filter:brightness(.9)}.order-btn[data-astro-cid-iehx2mtc]:active{transform:scale(.98)}.cart-page[data-astro-cid-h3zw4u6d]{padding:var(--space-lg) var(--space-sm)}h1[data-astro-cid-h3zw4u6d]{font-size:var(--h2-size);margin-bottom:var(--space-lg);text-align:center}.cart-items-list[data-astro-cid-h3zw4u6d]{margin-bottom:var(--space-lg)}.cart-item[data-astro-cid-h3zw4u6d]{display:flex;justify-content:space-between;align-items:center;padding:var(--space-sm) 0;border-bottom:1px solid var(--border-color)}.item-info[data-astro-cid-h3zw4u6d]{display:flex;flex-direction:column}.item-name[data-astro-cid-h3zw4u6d]{font-weight:600}.item-price[data-astro-cid-h3zw4u6d]{font-size:var(--small-size);color:var(--text-muted)}.remove-item[data-astro-cid-h3zw4u6d]{background:transparent;color:var(--accent);font-size:var(--small-size);font-weight:500}.cart-summary[data-astro-cid-h3zw4u6d]{background:var(--card-bg);padding:var(--space-md);border-radius:var(--radius);border:1px solid var(--border-color)}.order-form[data-astro-cid-h3zw4u6d]{display:flex;flex-direction:column;gap:var(--space-md);padding:var(--space-md);background:var(--bg-color);border-radius:var(--radius)}.form-group[data-astro-cid-h3zw4u6d]{display:flex;flex-direction:column;gap:var(--space-xs)}.form-group[data-astro-cid-h3zw4u6d] label[data-astro-cid-h3zw4u6d]{font-weight:700;font-size:.8rem;text-transform:uppercase;color:var(--text-muted)}.form-group[data-astro-cid-h3zw4u6d] input[data-astro-cid-h3zw4u6d],.form-group[data-astro-cid-h3zw4u6d] textarea[data-astro-cid-h3zw4u6d]{padding:.75rem;border:1px solid var(--border-color);border-radius:var(--radius);font-family:inherit;font-size:var(--body-size)}.form-group[data-astro-cid-h3zw4u6d] textarea[data-astro-cid-h3zw4u6d]{min-height:80px;resize:vertical}.order-btn.disabled{background:#ccc!important;pointer-events:none;opacity:.7}.summary-row[data-astro-cid-h3zw4u6d]{display:flex;justify-content:space-between;margin-bottom:var(--space-sm)}.total-row[data-astro-cid-h3zw4u6d]{font-size:1.25rem;font-weight:700;border-top:2px solid var(--text-color);padding-top:var(--space-sm);margin-top:var(--space-sm)}.actions[data-astro-cid-h3zw4u6d]{margin-top:var(--space-lg)}.clear-btn[data-astro-cid-h3zw4u6d]{display:block;width:100%;background:transparent;color:var(--text-muted);margin-top:var(--space-sm);font-size:var(--small-size);padding:.5rem}.browse-link[data-astro-cid-h3zw4u6d]{display:inline-block;margin-top:var(--space-sm);padding:.5rem 1.5rem;background:var(--primary);color:var(--secondary);border-radius:var(--radius);font-weight:600}
+</style></head> <body class> <header class="main-header"> <div class="container header-content"> <a href="/" class="logo">SUSHI MIST</a> <nav class="main-nav"> <!-- Desktop navigation --> <div class="nav-links desktop-nav"> <a href="/menu" class="menu-link">Menú</a> <a href="/cart" class="cart-link">
+Carrito (<span id="cart-count">0</span>)
+</a> </div> <!-- Hamburger menu for mobile, conditionally shown on landing page -->  <!-- Mobile navigation overlay --> <div id="mobile-nav-overlay" class="mobile-nav-overlay"> <button id="close-mobile-nav" class="close-mobile-nav">&times;</button> <div class="mobile-nav-links"> <a href="/menu" class="menu-link">Menú</a> <a href="/cart" class="cart-link">
+Carrito (<span id="mobile-cart-count">0</span>)
+</a> </div> </div> </nav> </div> </header> <main>  <div class="container cart-page" data-astro-cid-h3zw4u6d> <h1 data-astro-cid-h3zw4u6d>Tu Pedido</h1> <div id="cart-container" class="cart-items-list" data-astro-cid-h3zw4u6d> <p class="loading" data-astro-cid-h3zw4u6d>Cargando tu carrito...</p> </div> <div id="cart-summary" class="cart-summary" style="display: none;" data-astro-cid-h3zw4u6d> <div class="summary-row total-row" data-astro-cid-h3zw4u6d> <span data-astro-cid-h3zw4u6d>Total</span> <span id="cart-total" data-astro-cid-h3zw4u6d>$0</span> </div> <div class="order-form mt-lg" data-astro-cid-h3zw4u6d> <div class="form-group" data-astro-cid-h3zw4u6d> <label for="delivery-address" data-astro-cid-h3zw4u6d>Dirección de Envío *</label> <input type="text" id="delivery-address" placeholder="Nombre de la calle, número, apartamento..." required data-astro-cid-h3zw4u6d> </div> <div class="form-group" data-astro-cid-h3zw4u6d> <label for="special-instructions" data-astro-cid-h3zw4u6d>Instrucciones Especiales</label> <textarea id="special-instructions" placeholder="Ej: Sin cebolla, tocar 4B..." data-astro-cid-h3zw4u6d></textarea> </div> </div> <div class="actions" data-astro-cid-h3zw4u6d> <button id="whatsapp-order-btn" class="order-btn mt-lg disabled" data-astro-cid-iehx2mtc>
+Order via WhatsApp
+</button> <script>(function(){const whatsappNumber = "5352473962";
+
+  function setupWhatsAppButton() {
+    const btn = document.getElementById('whatsapp-order-btn');
+    if (!btn) return;
+
+    btn.addEventListener('click', () => {
+      const cart = JSON.parse(sessionStorage.getItem('cart') || '[]');
+      const address = sessionStorage.getItem('delivery_address') || '';
+      const instructions = sessionStorage.getItem('special_instructions') || '';
+      
+      if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
+      }
+
+      const itemsList = cart.map(item => item.name).join(', ');
+      let message = `Hola, quiero ordenar esto: ${itemsList}.`;
+      
+      message += `\n\n📍 Mi Dirección: ${address}`;
+      if (instructions) {
+        message += `\n\n📝 Nota: ${instructions}`;
+      }
+      
+      const encodedMessage = encodeURIComponent(message);
+      
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+      
+      window.open(whatsappUrl, '_blank');
+      
+      // Optional: Clear cart after order
+      // sessionStorage.removeItem('cart');
+      // window.dispatchEvent(new Event('cart-updated'));
+    });
+  }
+
+  setupWhatsAppButton();
+  document.addEventListener('astro:page-load', setupWhatsAppButton);
+})();</script>  <button id="clear-cart" class="clear-btn" data-astro-cid-h3zw4u6d>Vaciar Carrito</button> </div> </div> <div id="empty-cart-msg" style="display: none;" class="text-center mt-lg" data-astro-cid-h3zw4u6d> <p data-astro-cid-h3zw4u6d>Tu carrito está vacío.</p> <a href="/menu" class="browse-link" data-astro-cid-h3zw4u6d>Explorar Menú</a> </div> </div>  </main> <footer class="main-footer" data-astro-cid-sz7xmlte> <div class="container footer-content" data-astro-cid-sz7xmlte> <p class="footer-logo" data-astro-cid-sz7xmlte>SUSHI MIST</p> <div class="footer-brand" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>&copy; 2026 SUSHI MIST. Todos los derechos reservados.</p> </div> <div class="social-links" data-astro-cid-sz7xmlte> <a href="#" aria-label="WhatsApp" class="social-link" data-astro-cid-sz7xmlte>WhatsApp</a> <a href="#" aria-label="Instagram" class="social-link" data-astro-cid-sz7xmlte>Instagram</a> <a href="#" aria-label="Twitter" class="social-link" data-astro-cid-sz7xmlte>Twitter</a> </div> </div> </footer>  <script type="module">function d(){const t=JSON.parse(sessionStorage.getItem("cart")||"[]"),n=document.getElementById("cart-count"),o=document.getElementById("mobile-cart-count");n&&(n.textContent=t.length.toString()),o&&(o.textContent=t.length.toString())}const c=document.getElementById("hamburger-btn"),l=document.getElementById("close-mobile-nav"),e=document.getElementById("mobile-nav-overlay");c&&e&&c.addEventListener("click",()=>{e.classList.add("active"),document.body.style.overflow="hidden"});l&&e&&l.addEventListener("click",()=>{e.classList.remove("active"),document.body.style.overflow=""});e?.querySelectorAll("a").forEach(t=>{t.addEventListener("click",()=>{e.classList.remove("active"),document.body.style.overflow=""})});window.addEventListener("cart-updated",d);d();</script> </body> </html> <script>(function(){const currency = "$";
+
+  function renderCart() {
+    const container = document.getElementById('cart-container');
+    const summary = document.getElementById('cart-summary');
+    const emptyMsg = document.getElementById('empty-cart-msg');
+    const totalEl = document.getElementById('cart-total');
+    
+    if (!container || !summary || !emptyMsg || !totalEl) return;
+
+    const cart = JSON.parse(sessionStorage.getItem('cart') || '[]');
+
+    if (cart.length === 0) {
+      container.style.display = 'none';
+      summary.style.display = 'none';
+      emptyMsg.style.display = 'block';
+      return;
+    }
+
+    emptyMsg.style.display = 'none';
+    container.style.display = 'block';
+    summary.style.display = 'block';
+
+    let total = 0;
+    container.innerHTML = cart.map((item, index) => {
+      total += item.price;
+      return `
+        <div class="cart-item">
+          <div class="item-info">
+            <span class="item-name">${item.name}</span>
+            <span class="item-price">${currency}${item.price.toLocaleString()}</span>
+          </div>
+          <button class="remove-item" data-index="${index}">Eliminar</button>
+        </div>
+      `;
+    }).join('');
+
+    totalEl.textContent = `${currency}${total.toLocaleString()}`;
+
+    // Handle form input and button activation
+    const addressInput = document.getElementById('delivery-address');
+    const instructionsInput = document.getElementById('special-instructions');
+    const orderBtn = document.getElementById('whatsapp-order-btn');
+
+    const updateOrderDetails = () => {
+      const address = addressInput.value.trim();
+      const instructions = instructionsInput.value.trim();
+      
+      sessionStorage.setItem('delivery_address', address);
+      sessionStorage.setItem('special_instructions', instructions);
+
+      if (address.length > 5) {
+        orderBtn?.classList.remove('disabled');
+      } else {
+        orderBtn?.classList.add('disabled');
+      }
+    };
+
+    if (addressInput && !addressInput.dataset.listenerAdded) {
+      addressInput.addEventListener('input', updateOrderDetails);
+      addressInput.dataset.listenerAdded = 'true';
+    }
+    if (instructionsInput && !instructionsInput.dataset.listenerAdded) {
+      instructionsInput.addEventListener('input', updateOrderDetails);
+      instructionsInput.dataset.listenerAdded = 'true';
+    }
+
+    // Setup remove buttons
+    document.querySelectorAll('.remove-item').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const index = parseInt(e.target.dataset.index);
+        const newCart = [...cart];
+        newCart.splice(index, 1);
+        sessionStorage.setItem('cart', JSON.stringify(newCart));
+        window.dispatchEvent(new Event('cart-updated'));
+        renderCart();
+      });
+    });
+  }
+
+  // Clear cart logic
+  const clearBtn = document.getElementById('clear-cart');
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      if (confirm('¿Estás seguro de que quieres vaciar tu carrito?')) {
+        sessionStorage.removeItem('cart');
+        window.dispatchEvent(new Event('cart-updated'));
+        renderCart();
+      }
+    });
+  }
+
+  // Initial render
+  renderCart();
+  
+  // Re-render on page load (Astro)
+  document.addEventListener('astro:page-load', renderCart);
+})();</script> 
